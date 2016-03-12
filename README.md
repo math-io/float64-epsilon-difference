@@ -63,7 +63,7 @@ var d = diff( 1.0000000000000002, 1.0000000000000100, scale );
 *	If computing the [relative difference][relative-difference] in units of [epsilon][float64-epsilon] will result in overflow, the function returns the [maximum double-precision floating-point number][max-float64].
 
 	``` javascript
-	var d = diff( 1e304, 1 );
+	var d = diff( 1e304, 1, 'min' );
 	// returns ~1.798e308ε => 1e304/EPS overflows
 	```
 *	If the [absolute difference][absolute-difference] of `x` and `y` is `0`, the [relative difference][relative-difference] is __always__ `0`.

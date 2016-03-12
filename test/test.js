@@ -197,7 +197,7 @@ tape( 'the function computes the relative difference (max)', function test( t ) 
 	var d;
 
 	d = diff( 1, 10, 'max' );
-	expected = (9/5) / EPS;
+	expected = (9/10) / EPS;
 
 	t.equal( d, expected, 'returns '+expected );
 	t.end();
@@ -285,7 +285,7 @@ tape( 'the function supports custom scale functions', function test( t ) {
 });
 
 tape( 'if computing the relative difference will result in overflow, the function returns the maximum double-precision floating-point number', function test( t ) {
-	var d = diff( 1e304, 1 );
+	var d = diff( 1e304, 1, 'min' );
 	t.equal( 1e304/EPS, PINF, 'conversion will result in overflow' );
 	t.equal( d, MAX_FlOAT64, 'returns '+MAX_FlOAT64 );
 	t.end();
