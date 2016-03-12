@@ -60,14 +60,20 @@ var d = diff( 1.0000000000000002, 1.0000000000000100, scale );
 
 ## Notes
 
+*	If computing the [relative difference][relative-difference] in units of [epsilon][float64-epsilon] will result in overflow, the function returns the [maximum double-precision floating-point number][max-float64].
+
+	``` javascript
+	var d = diff( 1e304, 1 );
+	// returns ~1.798e308ε => 1e304/EPS overflows
+	```
 *	If the [absolute difference][absolute-difference] of `x` and `y` is `0`, the [relative difference][relative-difference] is __always__ `0`.
 
 	``` javascript
 	var d = diff( 0, 0 );
-	// returns 0
+	// returns 0ε
 
 	d = diff( 3.14, 3.14 );
-	// returns 0
+	// returns 0ε
 	```
 *	If `|x| = |y| = infinity`, the function returns `NaN`.
 
@@ -96,10 +102,7 @@ var d = diff( 1.0000000000000002, 1.0000000000000100, scale );
 *	If a `scale` function returns `0`, the function returns `NaN`.
 
 	``` javascript
-	var d = diff( 0, 2, 'mean' );
-	// returns |2/1| = 2
-
-	d = diff( -1, 1, 'mean' );
+	var d = diff( -1, 1, 'mean' );
 	// returns NaN => |2/0|
 	```
 
@@ -211,6 +214,7 @@ Copyright &copy; 2016. The [Compute.io][compute-io] Authors.
 [compute-io]: https://github.com/compute-io/
 
 [float64-epsilon]: https://github.com/const-io/eps-float64
+[max-float64]: https://github.com/const-io/max-float64
 [absolute-value]: https://github.com/math-io/abs
 [absolute-difference]: https://github.com/math-io/absolute-difference
 [relative-difference]: https://github.com/math-io/relative-difference
