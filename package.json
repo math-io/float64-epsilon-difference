@@ -45,7 +45,9 @@
 		"diff",
 		"difference",
 		"distance",
-		"dist"
+		"dist",
+    "epsilon",
+    "eps"
 	],
   "bugs": {
     "url": "https://github.com/math-io/float64-epsilon-difference/issues"
