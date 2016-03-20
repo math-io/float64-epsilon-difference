@@ -1,6 +1,6 @@
 {
   "name": "math-float64-epsilon-difference",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Computes the relative difference of two real numbers in units of double-precision floating-point epsilon.",
   "author": {
     "name": "Athan Reines",
