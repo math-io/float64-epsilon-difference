@@ -56,7 +56,7 @@
     "const-eps-float64": "^1.0.0",
     "const-max-float64": "^1.0.1",
     "const-pinf-float64": "^1.0.0",
-    "math-relative-difference": "git+https://github.com/math-io/relative-difference.git"
+    "math-relative-difference": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "13.x.x",
